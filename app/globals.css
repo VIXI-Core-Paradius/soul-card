@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0b0d14;
+  --surface: #12151f;
+  --surface-2: #1a1e2b;
+  --border: #2a2f40;
+  --foreground: #e8e3d6;
+  --muted: #9a93a6;
+  --gold: #c9a85c;
+  --gold-bright: #e6c878;
+  --accent: #6b8fd6;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-gold: var(--gold);
+  --color-gold-bright: var(--gold-bright);
+  --color-accent: var(--accent);
+  --font-sans: var(--font-noto-sans-jp);
+  --font-serif: var(--font-noto-serif-jp);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(201, 168, 92, 0.08), transparent),
+    radial-gradient(ellipse 60% 50% at 100% 100%, rgba(107, 143, 214, 0.06), transparent);
+  background-attachment: fixed;
+}
+
+/* 見出しの装飾用 */
+.heading-rule {
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+.heading-rule::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 3rem;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+/* カードのホバー演出 */
+.tile {
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.tile:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
