@@ -77,13 +77,6 @@ export const VICTORY = {
   sameCardMax: 3,
 };
 
-// 「12」のモチーフ（ヘラクレスの12の試練に由来）
-export const TWELVE = [
-  { n: "6", label: "初期神跡数（中間点）" },
-  { n: "12", label: "神跡の勝利ライン・レコード上限・ネクサス勝利条件" },
-  { n: "13", label: "神への到達を表す数（12を超えた瞬間／進化先レベル）" },
-];
-
 // ソウル効果の実例（救世神器 レイ）
 export const SOUL_EXAMPLE = {
   name: "救世神器　レイ",

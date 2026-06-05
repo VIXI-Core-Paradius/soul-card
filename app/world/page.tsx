@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { PageHeader, Section, Note } from "@/components/Section";
-import { ATTRIBUTES, LINEAGES, TWELVE } from "@/lib/data";
+import { ATTRIBUTES, LINEAGES } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "世界観",
@@ -41,26 +41,6 @@ export default function WorldPage() {
             へ到達して勝利する。
             すべての神跡を失った者は、神座への昇格資格を失い敗北する。
           </p>
-        </div>
-      </Section>
-
-      <Section title="「12」という数字">
-        <p className="mb-8 max-w-2xl leading-relaxed text-muted">
-          この世界では「12」が特別な意味を持つ。
-          <strong className="text-foreground">ヘラクレスの12の試練</strong>
-          になぞらえ、神跡の勝利ライン・レコードの上限・ネクサスの勝利条件……
-          あらゆる頂点が「12」に置かれている。そしてそれを超えた「13」は、神への到達を表す数だ。
-        </p>
-        <div className="grid gap-4 sm:grid-cols-3">
-          {TWELVE.map((t) => (
-            <div
-              key={t.n}
-              className="tile rounded-lg border border-border bg-surface p-6 text-center"
-            >
-              <p className="font-serif text-4xl font-bold text-gold-bright">{t.n}</p>
-              <p className="mt-2 text-sm leading-relaxed text-muted">{t.label}</p>
-            </div>
-          ))}
         </div>
       </Section>
 
