@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { PageHeader, Section, Note } from "@/components/Section";
-import { ATTRIBUTES, LINEAGES } from "@/lib/data";
+import { ATTRIBUTES, LINEAGES, TWELVE } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "世界観",
@@ -19,30 +19,48 @@ export default function WorldPage() {
       <Section title="この世界について">
         <div className="space-y-4 leading-relaxed text-foreground/90">
           <p>
-            この世界に起きたすべての出来事は、ひとつ残らず
-            <strong className="text-gold-bright">〈記録（レコード）〉</strong>
-            として刻まれている。星の生まれた瞬間も、無数の戦いも、ひとつの想いも――
-            あらゆる事象は記録となって、世界という大きな書物に綴られていく。
+            <strong className="text-gold-bright">次元世界</strong>
+            には、数多の神話・伝説に等しい
+            <strong className="text-gold-bright">情報</strong>
+            が漂っている。星を統べた竜の咆哮も、滅びた王国の祈りも、名もなき者の願いも――
+            あらゆる物語が、形をなさぬまま次元の海をたゆたっている。
           </p>
           <p>
-            その頁を書き換える力を持つのが、
-            <strong className="text-gold-bright">〈魂（ソウル）〉</strong>
-            を宿した者たちだ。彼らは記録に干渉し、自らの意志で世界の続きを描こうとする。
-            魂と魂がぶつかり合うとき、記録は揺らぎ、世界は新たな一頁を迎える。
-          </p>
-          <p>
-            戦いの果てに刻まれるのが
+            プレイヤーは、その情報を己の魂――
+            <strong className="text-gold-bright">ソウルカード</strong>
+            に引き寄せる者。神に成るための資格
             <strong className="text-gold-bright">〈神跡（しんせき）〉</strong>
-            ――至高の座
-            <strong className="text-gold-bright">〈神座（しんざ）〉</strong>
-            へと至る道のりを示す指標である。
-            神跡を極めた魂は神座へと辿り着き、力尽きた魂はその座から遠ざかっていく。
-            これは、記録を巡る魂たちの終わらない物語だ。
+            を集める旅、
+            <strong className="text-gold-bright">〈神征（しんせい）〉</strong>
+            に挑む。
           </p>
-          <Note>
-            ※ 上記はゲーム内の用語（記録・魂・神跡・神座）に沿った導入文です。
-            固有のキャラクター・地名・年代史などを加えたい場合は、設定を教えてください。
-          </Note>
+          <p>
+            <strong className="text-foreground">12 の神跡</strong>
+            を集めた者は、神への階段を昇り切り――至高の座
+            <strong className="text-gold-bright">〈神座（しんざ）〉</strong>
+            へ到達して勝利する。
+            すべての神跡を失った者は、神座への昇格資格を失い敗北する。
+          </p>
+        </div>
+      </Section>
+
+      <Section title="「12」という数字">
+        <p className="mb-8 max-w-2xl leading-relaxed text-muted">
+          この世界では「12」が特別な意味を持つ。
+          <strong className="text-foreground">ヘラクレスの12の試練</strong>
+          になぞらえ、神跡の勝利ライン・レコードの上限・ネクサスの勝利条件……
+          あらゆる頂点が「12」に置かれている。そしてそれを超えた「13」は、神への到達を表す数だ。
+        </p>
+        <div className="grid gap-4 sm:grid-cols-3">
+          {TWELVE.map((t) => (
+            <div
+              key={t.n}
+              className="tile rounded-lg border border-border bg-surface p-6 text-center"
+            >
+              <p className="font-serif text-4xl font-bold text-gold-bright">{t.n}</p>
+              <p className="mt-2 text-sm leading-relaxed text-muted">{t.label}</p>
+            </div>
+          ))}
         </div>
       </Section>
 
@@ -96,30 +114,28 @@ export default function WorldPage() {
           ))}
         </div>
         <Note>
-          ※ 各系譜の関係性・物語はこれから追加します。「今回は主要〇勢力を紹介」と
-          少しずつ掘り下げる連載形式にすると読みやすくなります。
+          ※ 系譜そのものに固有の特殊ルールはありません。カードの効果・進化条件・
+          ネクサス効果が参照する「種族」として働きます。
         </Note>
       </Section>
 
       <Section title="物語のはじまり">
         <div className="space-y-4 leading-relaxed text-foreground/90">
           <p>
-            ――かつてないほど記録が揺らいでいる。神座へ至る道が開かれた今、
-            22の系譜は、それぞれの理想を懸けて魂をぶつけ合う。
+            ――次元世界に、神座へ至る道が開かれた。漂う情報を奪い合い、
+            魂たちはそれぞれの理想を懸けて
+            <strong className="text-gold-bright">神征</strong>
+            に身を投じる。
           </p>
           <p>
             あなたもまた、ひとつの魂を率いる者。相棒となる
             <strong className="text-gold-bright">ソウルユニット</strong>
-            を選び、神跡を巡る戦いへ足を踏み入れる。
+            を選び、12 の神跡を求めて戦いへ足を踏み入れる。
             この世界の続きを記録するのは、果たして誰の魂か。
           </p>
           <p className="text-muted">
             ――その答えは、あなた自身のデッキで確かめてほしい。
           </p>
-          <Note>
-            ※ プロローグの叩き台です。具体的な主人公・事件・舞台が決まれば、
-            それに合わせて書き換えられます。
-          </Note>
         </div>
       </Section>
     </>

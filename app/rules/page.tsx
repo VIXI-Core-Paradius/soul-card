@@ -7,6 +7,7 @@ import {
   SOUL_EFFECT_LABELS,
   VICTORY,
   SOUL_EXAMPLE,
+  GLOSSARY,
 } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -56,14 +57,43 @@ export default function RulesPage() {
               ゲームの準備
             </h3>
             <ol className="list-decimal space-y-1.5 pl-5 text-sm leading-relaxed text-muted">
-              <li>デッキを用意する</li>
-              <li>ソウルユニットを1枚選び、裏向きでソウルゾーンに置く</li>
               <li>
-                手札を{" "}
+                <strong className="text-foreground">{VICTORY.deckMin}枚以上</strong>
+                （上限なし／同名カードは最大{VICTORY.sameCardMax}枚）のデッキを用意する
+              </li>
+              <li>デッキのユニット1枚をソウルユニットに選び、相手に非公開で伏せて置く</li>
+              <li>
+                「<strong className="text-foreground">ディメンションリンク</strong>」と宣言し、手札を{" "}
                 <strong className="text-foreground">{VICTORY.initialHand}</strong>{" "}
-                枚引いてゲーム開始（先攻の1ターン目はドローを行わない）
+                枚引いて開始（先攻ターン1はドローなし。後攻のみマリガン1回可・調整中）
               </li>
             </ol>
+          </div>
+        </div>
+        <Note>
+          1試合の単位を「<strong className="text-foreground">神征（しんせい）</strong>」と呼びます。
+          ダメージは「<strong className="text-foreground">瑕疵（かし）</strong>」として扱われ、1瑕疵ごとに神跡が1減ります。
+        </Note>
+      </Section>
+
+      {/* カードの状態 */}
+      <Section title="カードの状態">
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div className="tile rounded-lg border border-border bg-surface p-6">
+            <p className="font-serif text-lg font-bold text-gold-bright">
+              アクティブ <span className="text-sm text-muted">／ 縦向き</span>
+            </p>
+            <p className="mt-2 text-sm leading-relaxed text-muted">
+              行動可能な通常状態。
+            </p>
+          </div>
+          <div className="tile rounded-lg border border-border bg-surface p-6">
+            <p className="font-serif text-lg font-bold text-gold-bright">
+              インアクティブ <span className="text-sm text-muted">／ 横向き</span>
+            </p>
+            <p className="mt-2 text-sm leading-relaxed text-muted">
+              行動済みの疲労状態。アクティブフェイズに全回復する。
+            </p>
           </div>
         </div>
       </Section>
@@ -189,9 +219,10 @@ export default function RulesPage() {
             <p className="font-serif text-lg font-bold text-foreground">
               {SOUL_EXAMPLE.name}
               <span className="ml-2 align-middle text-xs text-muted">
-                ソウルユニット / {SOUL_EXAMPLE.attribute}属性
+                ソウルユニット / {SOUL_EXAMPLE.attribute}属性・{SOUL_EXAMPLE.lineage}系譜
               </span>
             </p>
+            <p className="mt-0.5 text-xs text-muted">{SOUL_EXAMPLE.meta}</p>
             <p className="mt-3 text-sm leading-relaxed text-muted">
               <span className="font-bold text-gold-bright">【覚醒】</span>
               {SOUL_EXAMPLE.awaken}
@@ -203,7 +234,36 @@ export default function RulesPage() {
               </p>
             ))}
           </div>
+
+          <Note>
+            ソウルユニットは
+            <strong className="text-foreground">HP0以下や強制除去でも墓地へ行かず</strong>
+            、最大HPまで全回復して場に残ります（このときプレイヤーが瑕疵1を負う）。
+            覚醒前は「場に存在しない」扱いで、攻撃はダイレクトアタックとして処理されます。
+          </Note>
         </div>
+      </Section>
+
+      {/* 用語集 */}
+      <Section title="用語集">
+        <dl className="grid gap-3 sm:grid-cols-2">
+          {GLOSSARY.map((g) => (
+            <div
+              key={g.term}
+              className="rounded-md border border-border bg-surface p-4"
+            >
+              <dt className="font-bold text-gold-bright">
+                {g.term}
+                {g.read && (
+                  <span className="ml-2 text-xs font-normal text-muted">
+                    {g.read}
+                  </span>
+                )}
+              </dt>
+              <dd className="mt-1 text-sm leading-relaxed text-muted">{g.desc}</dd>
+            </div>
+          ))}
+        </dl>
       </Section>
     </>
   );
