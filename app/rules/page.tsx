@@ -21,7 +21,7 @@ export default function RulesPage() {
       <PageHeader
         eyebrow="HOW TO PLAY"
         title="遊び方"
-        lead="基本ルールはシンプル。1対1でデッキを操り、相手の神跡を巡って戦います。"
+        lead="基本ルールはシンプル。1対1でデッキを操り、相手と神跡を巡って戦います。"
       />
 
       {/* 勝利条件 / 準備 */}
@@ -46,6 +46,10 @@ export default function RulesPage() {
                 神跡が{" "}
                 <strong className="text-gold-bright">{VICTORY.lose} になる</strong>
                 と敗北。
+              </li>
+              <li>
+                <strong className="text-gold-bright">自分以外のすべてのプレイヤーが敗北</strong>
+                したときも勝利。
               </li>
             </ul>
             <p className="mt-3 text-xs text-muted">
