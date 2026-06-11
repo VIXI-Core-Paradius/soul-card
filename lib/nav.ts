@@ -2,6 +2,7 @@ export const NAV_LINKS = [
   { href: "/", label: "TOP" },
   { href: "/world", label: "世界観" },
   { href: "/rules", label: "遊び方" },
+  { href: "/cards", label: "カードリスト" },
 ];
 
 export const SITE = {
