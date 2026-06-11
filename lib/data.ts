@@ -27,7 +27,7 @@ export type Lineage = {
 
 // 22系譜（Unity の Lineage enum 準拠）
 export const LINEAGES: Lineage[] = [
-  { name: "騎士", en: "Knight" },
+  { name: "守護", en: "Guardian" },
   { name: "魔導", en: "Magi" },
   { name: "獣", en: "Beast" },
   { name: "竜", en: "Dragon" },
@@ -36,9 +36,9 @@ export const LINEAGES: Lineage[] = [
   { name: "不死", en: "Undead" },
   { name: "悪魔", en: "Demon" },
   { name: "天使", en: "Angel" },
-  { name: "機巧", en: "Mechanic" },
-  { name: "人間", en: "Human" },
-  { name: "救世主", en: "Savior" },
+  { name: "機械", en: "Mechanic" },
+  { name: "真人", en: "Human" },
+  { name: "救世", en: "Savior" },
   { name: "原初", en: "Primordial" },
   { name: "神秘", en: "Mystic" },
   { name: "記憶", en: "Memory" },
@@ -47,7 +47,7 @@ export const LINEAGES: Lineage[] = [
   { name: "天空", en: "Sky" },
   { name: "大地", en: "GrandEarth" },
   { name: "海洋", en: "Ocean" },
-  { name: "冥界", en: "Underworld" },
+  { name: "冥府", en: "Underworld" },
   { name: "雷電", en: "Raiden" },
 ];
 
