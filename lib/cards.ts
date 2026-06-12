@@ -298,7 +298,7 @@ export const CARDS: GameCard[] = [
   vanilla("v-drone", "偵察ドローン", 1, "Neutral", 1000, 500, "Mechanic"),
   vanilla("v-robot", "量産型ロボット", 2, "Neutral", 2000, 2000, "Mechanic"),
   vanilla("v-soldier", "機械兵", 3, "Neutral", 5000, 1000, "Mechanic"),
-  vanilla("v-beast", "群れ成す獣", 1, "Neutral", 1000, 1000, "Beast"),
+  vanilla("v-beast", "群れ成す獣", 1, "Earth", 1000, 1000, "Beast"),
   vanilla("v-wraith", "死霊", 1, "Dark", 1000, 0, "Undead"),
   vanilla("v-zombie", "生ける屍", 2, "Dark", 1000, 2000, "Undead"),
 
