@@ -373,6 +373,9 @@ export const CARDS: GameCard[] = [
       text: "ユニット1体に4000ダメージを与える。この効果でダメージを与えたユニットはこのターンの間、アタック/ブロックできない。",
     },
   ]),
+  spell("m-d-access", "Dアクセス", 3, "Neutral", "Magic", "NormalMagic", [
+    { label: "【起動】", text: "自分は２枚ドローする。" },
+  ]),
   spell("m-savior-journey", "救世の旅路", 5, "Neutral", "Magic", "PersistentMagic", [
     {
       label: "【起動】",
@@ -385,6 +388,12 @@ export const CARDS: GameCard[] = [
     {
       label: "【起動】",
       text: "自分メインフェイズ開始時のみ、このカードを使用できる。このターンの間、フィールドの魔法カードの効果は無効になる。",
+    },
+  ]),
+  spell("i-rl-machine", "強化学習装置", 2, "Neutral", "Item", "NormalItem", [
+    {
+      label: "【起動】",
+      text: "自分のデッキの１番上のカードを、自分のレコードゾーンに置く。",
     },
   ]),
 ];
