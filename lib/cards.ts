@@ -288,7 +288,7 @@ export const CARDS: GameCard[] = [
 
   // ── バニラユニット14種 ──
   vanilla("v-magi", "幼き魔法使い", 1, "Neutral", 1000, 500, "Magi"),
-  vanilla("v-fairy", "霧の妖精", 1, "Wind", 1000, 1000, "Fairy"),
+  vanilla("v-fairy", "霧の妖精", 1, "Water", 1000, 1000, "Fairy"),
   vanilla("v-spirit-earth", "地の下級精霊", 3, "Earth", 4000, 2000, "Spirit"),
   vanilla("v-spirit-water", "水の下級精霊", 3, "Water", 5000, 1000, "Spirit"),
   vanilla("v-spirit-fire", "炎の下級精霊", 3, "Fire", 2000, 4000, "Spirit"),
